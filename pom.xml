@@ -24,6 +24,8 @@ probably won't but leaving here just in case
   <url>https://github.com/cowtowncoder/java-bitmate</url>
   <scm>
     <url>https://github.com/cowtowncoder/java-bitmate</url>
+    <connection>scm:git:git@github.com:cowtowncoder/java-bitmate.git</connection>
+    <developerConnection>scm:git:git@github.com:cowtowncoder/java-bitmate.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
   <developers>
