@@ -13,7 +13,27 @@
   <description>Library that contains bitset compression codecs (compress/uncompress)
   </description>
 
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>tatu</id>
+      <name>Tatu Saloranta</name>
+      <email>tatu.saloranta@iki.fi</email>
+    </developer>
+  </developers>
+
   <properties>
+    <javac.src.version>1.7</javac.src.version>
+    <javac.target.version>1.7</javac.target.version>
+
+    <jackson.version.core>2.7.4</jackson.version.core>
+
     <!-- 24-Nov-2015, tatu: for a bit thought I'd need to manually specify exports;
 probably won't but leaving here just in case
     -->
@@ -28,29 +48,33 @@ probably won't but leaving here just in case
     <developerConnection>scm:git:git@github.com:cowtowncoder/java-bitmate.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
-  <developers>
-    <developer>
-      <id>tatu</id>
-      <name>Tatu Saloranta</name>
-      <email>tatu.saloranta@iki.fi</email>
-    </developer>
-  </developers>
-
-  <properties>
-    <javac.src.version>1.7</javac.src.version>
-    <javac.target.version>1.7</javac.target.version>
-  </properties>
-
-  <!-- Licensing -->
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
 
   <dependencies>
+    <!-- temporary deps for testing -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${jackson.version.core}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version.core}</version>
+    </dependency>
+
+    <!-- for perf/efficiency comparisons, check out Roaring etc -->
+    <dependency>
+      <groupId>org.roaringbitmap</groupId>
+      <artifactId>RoaringBitmap</artifactId>
+      <version>0.6.14</version>
+    </dependency>
+    <dependency>
+      <groupId>com.ning</groupId>
+      <artifactId>compress-lzf</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
